@@ -159,7 +159,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zau-ti-pqT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zau-ti-pqT">
                                 <rect key="frame" x="8" y="175" width="377" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
@@ -175,16 +175,55 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="480-PE-h84">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="480-PE-h84" customClass="GridCollectionViewCell" customModule="People" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="83l-Wh-jpU">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nN7-8k-lCA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nN7-8k-lCA" firstAttribute="top" secondItem="83l-Wh-jpU" secondAttribute="top" id="ArN-r5-G5z"/>
+                                                <constraint firstItem="nN7-8k-lCA" firstAttribute="leading" secondItem="83l-Wh-jpU" secondAttribute="leading" id="Okv-ff-9mP"/>
+                                                <constraint firstAttribute="bottom" secondItem="nN7-8k-lCA" secondAttribute="bottom" id="ciq-21-u9X"/>
+                                                <constraint firstAttribute="trailing" secondItem="nN7-8k-lCA" secondAttribute="trailing" id="yOs-dD-vHx"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="personImageView" destination="nN7-8k-lCA" id="izk-3b-RJG"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="hnk-Fh-Cd0" id="NLt-DQ-0v9"/>
+                                    <outlet property="delegate" destination="hnk-Fh-Cd0" id="pYK-L3-ssQ"/>
+                                </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSQ-SP-Wxq">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vZh-UU-r2E">
+                                        <rect key="frame" x="178" y="361" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIM-fN-i5z">
+                                        <rect key="frame" x="131.66666666666666" y="431.33333333333331" width="129.99999999999997" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="vZh-UU-r2E" firstAttribute="centerX" secondItem="WSQ-SP-Wxq" secondAttribute="centerX" id="Kik-1e-KHT"/>
+                                    <constraint firstItem="vZh-UU-r2E" firstAttribute="centerY" secondItem="WSQ-SP-Wxq" secondAttribute="centerY" id="L3U-VT-H4H"/>
+                                    <constraint firstItem="RIM-fN-i5z" firstAttribute="centerX" secondItem="WSQ-SP-Wxq" secondAttribute="centerX" id="cmp-DI-9L5"/>
+                                    <constraint firstItem="RIM-fN-i5z" firstAttribute="top" secondItem="vZh-UU-r2E" secondAttribute="bottom" constant="33.333333333333314" id="ytj-XC-SBt"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mfc-16-zNv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -199,25 +238,33 @@
                             <constraint firstItem="mfc-16-zNv" firstAttribute="trailing" secondItem="fT5-62-rXW" secondAttribute="trailing" constant="8" id="Ivh-ql-ZZ9"/>
                             <constraint firstItem="fT5-62-rXW" firstAttribute="top" secondItem="5Cg-Nc-uSf" secondAttribute="bottom" constant="8" symbolic="YES" id="LOi-2B-rWk"/>
                             <constraint firstItem="fT5-62-rXW" firstAttribute="leading" secondItem="Wg5-yJ-eKn" secondAttribute="trailing" constant="8" id="MoU-AH-gY0"/>
+                            <constraint firstItem="mfc-16-zNv" firstAttribute="bottom" secondItem="WSQ-SP-Wxq" secondAttribute="bottom" id="OSl-DN-1HV"/>
+                            <constraint firstItem="WSQ-SP-Wxq" firstAttribute="leading" secondItem="mfc-16-zNv" secondAttribute="leading" id="OmQ-DH-Ohw"/>
                             <constraint firstItem="Wg5-yJ-eKn" firstAttribute="leading" secondItem="mfc-16-zNv" secondAttribute="leading" constant="8" id="Rtb-an-y4c"/>
                             <constraint firstItem="S1n-NE-rv2" firstAttribute="leading" secondItem="mfc-16-zNv" secondAttribute="leading" constant="8" id="TNW-QO-Ha4"/>
                             <constraint firstItem="mfc-16-zNv" firstAttribute="trailing" secondItem="eXq-u0-QfM" secondAttribute="trailing" constant="8" id="UBf-I4-OPs"/>
                             <constraint firstItem="QEt-6i-17R" firstAttribute="leading" secondItem="Wg5-yJ-eKn" secondAttribute="trailing" constant="8" id="Xxw-gY-zid"/>
                             <constraint firstItem="mfc-16-zNv" firstAttribute="trailing" secondItem="QEt-6i-17R" secondAttribute="trailing" constant="8" id="YCH-O6-v6e"/>
+                            <constraint firstItem="mfc-16-zNv" firstAttribute="trailing" secondItem="WSQ-SP-Wxq" secondAttribute="trailing" id="bUJ-5d-7h0"/>
                             <constraint firstItem="eXq-u0-QfM" firstAttribute="top" secondItem="QEt-6i-17R" secondAttribute="bottom" constant="8" id="e5d-VW-6rk"/>
                             <constraint firstItem="eXq-u0-QfM" firstAttribute="leading" secondItem="Wg5-yJ-eKn" secondAttribute="trailing" constant="8" id="iPy-mw-TR8"/>
                             <constraint firstItem="mfc-16-zNv" firstAttribute="trailing" secondItem="zau-ti-pqT" secondAttribute="trailing" constant="8" id="iiU-p1-Kzl"/>
+                            <constraint firstItem="WSQ-SP-Wxq" firstAttribute="top" secondItem="mfc-16-zNv" secondAttribute="top" id="n3f-Ib-Vza"/>
                             <constraint firstItem="zau-ti-pqT" firstAttribute="leading" secondItem="mfc-16-zNv" secondAttribute="leading" constant="8" id="uvd-bc-78y"/>
                             <constraint firstItem="mfc-16-zNv" firstAttribute="trailing" secondItem="S1n-NE-rv2" secondAttribute="trailing" constant="8" id="vkP-lc-rze"/>
                             <constraint firstItem="5Cg-Nc-uSf" firstAttribute="leading" secondItem="Wg5-yJ-eKn" secondAttribute="trailing" constant="8" id="zhP-Pg-JR4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="vZh-UU-r2E" id="Cuz-TA-E3z"/>
                         <outlet property="detailLabel" destination="zau-ti-pqT" id="7rP-0I-n05"/>
+                        <outlet property="imageCollectionView" destination="S1n-NE-rv2" id="rRJ-Yb-3VL"/>
                         <outlet property="infoLabel1" destination="QEt-6i-17R" id="3gb-bL-lA6"/>
                         <outlet property="infoLabel2" destination="eXq-u0-QfM" id="bxm-MB-KJD"/>
                         <outlet property="infoLabel3" destination="5Cg-Nc-uSf" id="vVQ-ai-Qsd"/>
                         <outlet property="infoLabel4" destination="fT5-62-rXW" id="Cvk-JF-dzA"/>
+                        <outlet property="loaderContainer" destination="WSQ-SP-Wxq" id="qxA-rI-nN5"/>
+                        <outlet property="noDataLabel" destination="RIM-fN-i5z" id="wYW-fc-pwW"/>
                         <outlet property="personImageView" destination="Wg5-yJ-eKn" id="dmV-qL-Xg0"/>
                     </connections>
                 </viewController>

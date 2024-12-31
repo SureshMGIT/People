@@ -10,7 +10,7 @@ import Foundation
 final class PersonDetailViewModel {
     
     var personId: String = ""
-    
+    var imagesItemPerson: [ImageItem] = []
     weak var delegate: PersonDetailViewModelDelegate?
     
     func fetchPersonDetails() async {
@@ -32,6 +32,7 @@ final class PersonDetailViewModel {
         switch fetchedImages {
         case .success(let item):
             imagesPerson = item
+            imagesItemPerson = item.profiles
         case .failure(_):
             break
         }

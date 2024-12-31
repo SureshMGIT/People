@@ -23,6 +23,7 @@
 		FADAE2E82D240D8E00FF05E1 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE2E72D240D8E00FF05E1 /* PersonDetailViewController.swift */; };
 		FADAE2EA2D240FE600FF05E1 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE2E92D240FE600FF05E1 /* PersonModel.swift */; };
 		FADAE2EC2D2414E000FF05E1 /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE2EB2D2414E000FF05E1 /* PersonDetailViewModel.swift */; };
+		FADAE2EE2D2435E200FF05E1 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE2ED2D2435E200FF05E1 /* GridCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		FADAE2E72D240D8E00FF05E1 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		FADAE2E92D240FE600FF05E1 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		FADAE2EB2D2414E000FF05E1 /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
+		FADAE2ED2D2435E200FF05E1 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				FADAE2EB2D2414E000FF05E1 /* PersonDetailViewModel.swift */,
 				FADAE2DD2D23E13900FF05E1 /* PersonTableViewCell.swift */,
 				FADAE2E52D23F9F600FF05E1 /* LoaderTableViewCell.swift */,
+				FADAE2ED2D2435E200FF05E1 /* GridCollectionViewCell.swift */,
 				FADAE2D72D23D6E000FF05E1 /* PeopleListViewModel.swift */,
 				FADAE2E12D23E2EC00FF05E1 /* ViewModelProtocol.swift */,
 				FADAE2D92D23D81A00FF05E1 /* NetworkManager.swift */,
@@ -172,6 +175,7 @@
 				FADAE2E62D23F9F600FF05E1 /* LoaderTableViewCell.swift in Sources */,
 				FADAE2E22D23E2EC00FF05E1 /* ViewModelProtocol.swift in Sources */,
 				FADAE2E42D23F1F100FF05E1 /* CacheManager.swift in Sources */,
+				FADAE2EE2D2435E200FF05E1 /* GridCollectionViewCell.swift in Sources */,
 				FADAE2E82D240D8E00FF05E1 /* PersonDetailViewController.swift in Sources */,
 				FADAE2C82D23D5C900FF05E1 /* PeopleListViewController.swift in Sources */,
 				FADAE2D82D23D6E000FF05E1 /* PeopleListViewModel.swift in Sources */,
