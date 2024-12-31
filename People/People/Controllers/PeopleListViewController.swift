@@ -22,6 +22,7 @@ final class PeopleListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         viewModel.delegate = self
+        self.title = "People"
         showLoader()
         fetchList()
     }
@@ -88,6 +89,12 @@ extension PeopleListViewController: ViewModelDelegate {
     }
     
     func peopleListFetchedFailed() {
-        
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicatorView.isHidden = true
+            self?.tableView.isHidden = true
+            let alert = UIAlertController(title: "Error", message: "No data available", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self?.present(alert, animated: true)
+        }
     }
 }

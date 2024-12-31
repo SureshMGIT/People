@@ -72,7 +72,7 @@ extension PersonDetailViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? GridCollectionViewCell
         cell?.personImageView.image = nil
         CacheManager().downloadImage(path: viewModel.imagesItemPerson[indexPath.row].filePath ?? "", indexpath: indexPath, compltion: { (image, inxpath) in
-            guard let inxpath, let tableCell = collectionView.cellForItem(at: indexPath) as? GridCollectionViewCell else { return }
+            guard let tableCell = collectionView.cellForItem(at: indexPath) as? GridCollectionViewCell else { return }
             if let image {
                 tableCell.personImageView.image = image
             } else {
