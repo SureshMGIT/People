@@ -24,4 +24,8 @@ final class PersonTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func setupData(person: Person) {
+        nameLabel.text = person.name
+        professionLabel.text = person.knownForDepartment.rawValue
+    }
 }

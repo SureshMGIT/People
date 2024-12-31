@@ -17,6 +17,7 @@
 		FADAE2DA2D23D81A00FF05E1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE2D92D23D81A00FF05E1 /* NetworkManager.swift */; };
 		FADAE2DC2D23DCF400FF05E1 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE2DB2D23DCF400FF05E1 /* PeopleModel.swift */; };
 		FADAE2DE2D23E13900FF05E1 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE2DD2D23E13900FF05E1 /* PersonTableViewCell.swift */; };
+		FADAE2E22D23E2EC00FF05E1 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE2E12D23E2EC00FF05E1 /* ViewModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FADAE2D92D23D81A00FF05E1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FADAE2DB2D23DCF400FF05E1 /* PeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
 		FADAE2DD2D23E13900FF05E1 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		FADAE2E12D23E2EC00FF05E1 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				FADAE2C72D23D5C900FF05E1 /* PeopleListViewController.swift */,
 				FADAE2DD2D23E13900FF05E1 /* PersonTableViewCell.swift */,
 				FADAE2D72D23D6E000FF05E1 /* PeopleListViewModel.swift */,
+				FADAE2E12D23E2EC00FF05E1 /* ViewModelProtocol.swift */,
 				FADAE2D92D23D81A00FF05E1 /* NetworkManager.swift */,
 				FADAE2DB2D23DCF400FF05E1 /* PeopleModel.swift */,
 				FADAE2C92D23D5C900FF05E1 /* Main.storyboard */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADAE2E22D23E2EC00FF05E1 /* ViewModelProtocol.swift in Sources */,
 				FADAE2C82D23D5C900FF05E1 /* PeopleListViewController.swift in Sources */,
 				FADAE2D82D23D6E000FF05E1 /* PeopleListViewModel.swift in Sources */,
 				FADAE2DA2D23D81A00FF05E1 /* NetworkManager.swift in Sources */,

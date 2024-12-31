@@ -9,7 +9,7 @@ import Foundation
 
 final class NetworkManager {
     
-    func fetchPeople(page: String) async {
+    func fetchPeople(page: String) async -> Result<PeopleModel, NetworkError> {
 
         let url = URL(string: "https://api.themoviedb.org/3/person/popular")!
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
@@ -31,9 +31,9 @@ final class NetworkManager {
             let session = URLSession(configuration: .default, delegate: CustomSessionDelegate(), delegateQueue: nil)
             let (data, _) = try await session.data(for: request)
             let peopleModel = try JSONDecoder().decode(PeopleModel.self, from: data)
-            print(peopleModel, peopleModel.list)
+            return .success(peopleModel)
         } catch {
-            print(error.localizedDescription)
+            return .failure(.networkError)
         }
     }
 }
@@ -48,4 +48,8 @@ class CustomSessionDelegate: NSObject, URLSessionDelegate {
             completionHandler(.performDefaultHandling, nil)
         }
     }
+}
+
+enum NetworkError: Error {
+    case networkError
 }
