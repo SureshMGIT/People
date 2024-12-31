@@ -78,26 +78,82 @@
 		FADAE2C22D23D5C900FF05E1 /* People */ = {
 			isa = PBXGroup;
 			children = (
+				FADAE2F62D24395B00FF05E1 /* Cache */,
+				FADAE2F52D24394C00FF05E1 /* Network */,
+				FADAE2F42D24393800FF05E1 /* Models */,
+				FADAE2F32D24391E00FF05E1 /* Protocols */,
+				FADAE2F22D24390500FF05E1 /* Views */,
+				FADAE2F02D2438D700FF05E1 /* ViewModels */,
+				FADAE2EF2D2438BF00FF05E1 /* Controllers */,
 				FADAE2C32D23D5C900FF05E1 /* AppDelegate.swift */,
 				FADAE2C52D23D5C900FF05E1 /* SceneDelegate.swift */,
-				FADAE2C72D23D5C900FF05E1 /* PeopleListViewController.swift */,
-				FADAE2E72D240D8E00FF05E1 /* PersonDetailViewController.swift */,
-				FADAE2EB2D2414E000FF05E1 /* PersonDetailViewModel.swift */,
-				FADAE2DD2D23E13900FF05E1 /* PersonTableViewCell.swift */,
-				FADAE2E52D23F9F600FF05E1 /* LoaderTableViewCell.swift */,
-				FADAE2ED2D2435E200FF05E1 /* GridCollectionViewCell.swift */,
-				FADAE2D72D23D6E000FF05E1 /* PeopleListViewModel.swift */,
-				FADAE2E12D23E2EC00FF05E1 /* ViewModelProtocol.swift */,
-				FADAE2D92D23D81A00FF05E1 /* NetworkManager.swift */,
-				FADAE2E32D23F1F100FF05E1 /* CacheManager.swift */,
-				FADAE2DB2D23DCF400FF05E1 /* PeopleModel.swift */,
-				FADAE2E92D240FE600FF05E1 /* PersonModel.swift */,
 				FADAE2C92D23D5C900FF05E1 /* Main.storyboard */,
 				FADAE2CC2D23D5CB00FF05E1 /* Assets.xcassets */,
 				FADAE2CE2D23D5CB00FF05E1 /* LaunchScreen.storyboard */,
 				FADAE2D12D23D5CB00FF05E1 /* Info.plist */,
 			);
 			path = People;
+			sourceTree = "<group>";
+		};
+		FADAE2EF2D2438BF00FF05E1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FADAE2C72D23D5C900FF05E1 /* PeopleListViewController.swift */,
+				FADAE2E72D240D8E00FF05E1 /* PersonDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FADAE2F02D2438D700FF05E1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FADAE2EB2D2414E000FF05E1 /* PersonDetailViewModel.swift */,
+				FADAE2D72D23D6E000FF05E1 /* PeopleListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FADAE2F22D24390500FF05E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FADAE2DD2D23E13900FF05E1 /* PersonTableViewCell.swift */,
+				FADAE2E52D23F9F600FF05E1 /* LoaderTableViewCell.swift */,
+				FADAE2ED2D2435E200FF05E1 /* GridCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FADAE2F32D24391E00FF05E1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FADAE2E12D23E2EC00FF05E1 /* ViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FADAE2F42D24393800FF05E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FADAE2DB2D23DCF400FF05E1 /* PeopleModel.swift */,
+				FADAE2E92D240FE600FF05E1 /* PersonModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FADAE2F52D24394C00FF05E1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FADAE2D92D23D81A00FF05E1 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FADAE2F62D24395B00FF05E1 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				FADAE2E32D23F1F100FF05E1 /* CacheManager.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
