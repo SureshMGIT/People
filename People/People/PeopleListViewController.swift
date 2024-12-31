@@ -8,7 +8,9 @@
 import UIKit
 
 final class PeopleListViewController: UIViewController {
-
+    
+    @IBOutlet var tableView: UITableView!
+    
     let viewModel = PeopleListViewModel()
     
     override func viewDidLoad() {
