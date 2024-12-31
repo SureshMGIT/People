@@ -30,7 +30,8 @@ final class NetworkManager {
         do {
             let session = URLSession(configuration: .default, delegate: CustomSessionDelegate(), delegateQueue: nil)
             let (data, _) = try await session.data(for: request)
-            print(String(decoding: data, as: UTF8.self))
+            let peopleModel = try JSONDecoder().decode(PeopleModel.self, from: data)
+            print(peopleModel, peopleModel.list)
         } catch {
             print(error.localizedDescription)
         }
