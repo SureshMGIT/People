@@ -69,6 +69,16 @@ extension PeopleListViewController: UITableViewDataSource {
     }
 }
 
+extension PeopleListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let personId = viewModel.peopleList[indexPath.row].id
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let personDetailViewController = storyboard.instantiateViewController(identifier: "PersonDetailViewController") as? PersonDetailViewController
+        personDetailViewController?.personId = String(personId ?? 0)
+        self.navigationController?.pushViewController(personDetailViewController!, animated: true)
+    }
+}
+
 extension PeopleListViewController: ViewModelDelegate {
     func peopleListFetched() {
         DispatchQueue.main.async { [weak self] in

@@ -49,7 +49,7 @@ final class NetworkManager {
         }
     }
     
-    func fetchPersonImages(personId: String) async -> Result<Images, NetworkError>{
+    func fetchPersonImages(personId: String) async -> Result<Images, NetworkError> {
 
         let url = URL(string: "https://api.themoviedb.org/3/person/\(personId)/images")!
         var request = URLRequest(url: url)
@@ -66,6 +66,36 @@ final class NetworkManager {
             let imageModel = try JSONDecoder().decode(Images.self, from: data)
             return .success(imageModel)
         } catch {
+            print(error.localizedDescription)
+            return .failure(.networkError)
+        }
+    }
+    
+    func fetchPersonDetails(personId: String) async -> Result<PersonItem, NetworkError> {
+
+        let url = URL(string: "https://api.themoviedb.org/3/person/\(personId)")!
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
+        let queryItems: [URLQueryItem] = [
+          URLQueryItem(name: "language", value: "en-US"),
+        ]
+        components.queryItems = components.queryItems.map { $0 + queryItems } ?? queryItems
+
+        var request = URLRequest(url: components.url!)
+        request.httpMethod = "GET"
+        request.timeoutInterval = 10
+        request.allHTTPHeaderFields = [
+          "accept": "application/json",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0MzYzOTM0ZGM2ZTUwMmIzMDc0NGM2Zjc1OTJkYTYxMiIsIm5iZiI6MTczNTYyNzA3OC40MzEsInN1YiI6IjY3NzM5MTQ2OThmMmY4MmZjNDkyOTI2MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XqznN4VjxzC9tuQq5VXVn4KWUTYMWlivucvzHCj3G48"
+        ]
+        
+        do {
+            let session = URLSession(configuration: .default, delegate: CustomSessionDelegate(), delegateQueue: nil)
+            let (data, _) = try await session.data(for: request)
+            print(String(decoding: data, as: UTF8.self))
+            let personModel = try JSONDecoder().decode(PersonItem.self, from: data)
+            return .success(personModel)
+        } catch {
+            print(error.localizedDescription)
             return .failure(.networkError)
         }
     }

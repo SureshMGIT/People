@@ -11,3 +11,8 @@ protocol ViewModelDelegate: AnyObject {
     func peopleListFetched()
     func peopleListFetchedFailed()
 }
+
+protocol PersonDetailViewModelDelegate: AnyObject {
+    func peopleDetailFetched(personDetail: PersonItem, images: Images)
+    func peopleDetailFetchedFailed()
+}
