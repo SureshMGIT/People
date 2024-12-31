@@ -73,6 +73,26 @@
                                             <outlet property="professionLabel" destination="Vhi-DV-RKX" id="0pi-Ji-Fyj"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="loader" rowHeight="40" id="UUl-gd-ZDu" customClass="LoaderTableViewCell" customModule="People" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="133" width="393" height="40"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UUl-gd-ZDu" id="SRw-TQ-jty">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="40"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="79a-C6-3Qs">
+                                                    <rect key="frame" x="186.66666666666666" y="10" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="79a-C6-3Qs" firstAttribute="centerX" secondItem="SRw-TQ-jty" secondAttribute="centerX" id="DHZ-jO-Rp4"/>
+                                                <constraint firstItem="79a-C6-3Qs" firstAttribute="centerY" secondItem="SRw-TQ-jty" secondAttribute="centerY" id="S4Y-x0-fn4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityIndicatorView" destination="79a-C6-3Qs" id="5hv-l1-1R2"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="CXP-Cv-0se"/>

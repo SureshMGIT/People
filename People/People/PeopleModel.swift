@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 // MARK: - Welcome
 struct PeopleModel: Codable {
     let page: Int
@@ -23,13 +24,13 @@ struct PeopleModel: Codable {
 
 // MARK: - Result
 struct Person: Codable {
-    let adult: Bool
-    let gender, id: Int
-    let knownForDepartment: KnownForDepartment
-    let name, originalName: String
-    let popularity: Double
-    let profilePath: String
-    let knownFor: [KnownFor]
+    let adult: Bool?
+    let gender, id: Int?
+    let knownForDepartment: String?
+    let name, originalName: String?
+    let popularity: Double?
+    let profilePath: String?
+    let knownFor: [KnownFor]?
 
     enum CodingKeys: String, CodingKey {
         case adult, gender, id
@@ -45,18 +46,18 @@ struct Person: Codable {
 // MARK: - KnownFor
 struct KnownFor: Codable {
     let backdropPath: String?
-    let id: Int
+    let id: Int?
     let title, originalTitle: String?
-    let overview, posterPath: String
-    let mediaType: MediaType
-    let adult: Bool
-    let originalLanguage: String
-    let genreIDS: [Int]
-    let popularity: Double
+    let overview, posterPath: String?
+    let mediaType: MediaType?
+    let adult: Bool?
+    let originalLanguage: String?
+    let genreIDS: [Int]?
+    let popularity: Double?
     let releaseDate: String?
     let video: Bool?
-    let voteAverage: Double
-    let voteCount: Int
+    let voteAverage: Double?
+    let voteCount: Int?
     let name, originalName, firstAirDate: String?
     let originCountry: [String]?
 
@@ -87,7 +88,16 @@ enum MediaType: String, Codable {
     case tv = "tv"
 }
 
+enum OriginalLanguage: String, Codable {
+    case cn = "cn"
+    case en = "en"
+    case ja = "ja"
+    case ko = "ko"
+    case zh = "zh"
+}
+
 enum KnownForDepartment: String, Codable {
     case acting = "Acting"
+    case directing = "Directing"
     case visualEffects = "Visual Effects"
 }

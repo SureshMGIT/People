@@ -1,5 +1,5 @@
 //
-//  PersonTableViewCell.swift
+//  LoaderTableViewCell.swift
 //  People
 //
 //  Created by Suresh M on 31/12/24.
@@ -7,11 +7,9 @@
 
 import UIKit
 
-final class PersonTableViewCell: UITableViewCell {
+class LoaderTableViewCell: UITableViewCell {
 
-    @IBOutlet var professionLabel: UILabel!
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var personImageView: UIImageView!
+    @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,8 +22,4 @@ final class PersonTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setupData(person: Person) {
-        nameLabel.text = person.name
-        professionLabel.text = person.knownForDepartment
-    }
 }

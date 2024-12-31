@@ -19,6 +19,7 @@
 		FADAE2DE2D23E13900FF05E1 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE2DD2D23E13900FF05E1 /* PersonTableViewCell.swift */; };
 		FADAE2E22D23E2EC00FF05E1 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE2E12D23E2EC00FF05E1 /* ViewModelProtocol.swift */; };
 		FADAE2E42D23F1F100FF05E1 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE2E32D23F1F100FF05E1 /* CacheManager.swift */; };
+		FADAE2E62D23F9F600FF05E1 /* LoaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE2E52D23F9F600FF05E1 /* LoaderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		FADAE2DD2D23E13900FF05E1 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		FADAE2E12D23E2EC00FF05E1 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		FADAE2E32D23F1F100FF05E1 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		FADAE2E52D23F9F600FF05E1 /* LoaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				FADAE2C52D23D5C900FF05E1 /* SceneDelegate.swift */,
 				FADAE2C72D23D5C900FF05E1 /* PeopleListViewController.swift */,
 				FADAE2DD2D23E13900FF05E1 /* PersonTableViewCell.swift */,
+				FADAE2E52D23F9F600FF05E1 /* LoaderTableViewCell.swift */,
 				FADAE2D72D23D6E000FF05E1 /* PeopleListViewModel.swift */,
 				FADAE2E12D23E2EC00FF05E1 /* ViewModelProtocol.swift */,
 				FADAE2D92D23D81A00FF05E1 /* NetworkManager.swift */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADAE2E62D23F9F600FF05E1 /* LoaderTableViewCell.swift in Sources */,
 				FADAE2E22D23E2EC00FF05E1 /* ViewModelProtocol.swift in Sources */,
 				FADAE2E42D23F1F100FF05E1 /* CacheManager.swift in Sources */,
 				FADAE2C82D23D5C900FF05E1 /* PeopleListViewController.swift in Sources */,
