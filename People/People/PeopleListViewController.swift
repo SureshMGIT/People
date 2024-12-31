@@ -16,6 +16,10 @@ final class PeopleListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        Task {
+           await viewModel.fetchPeopleList()
+        }
     }
 
 

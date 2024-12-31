@@ -9,4 +9,7 @@ import Foundation
 
 final class PeopleListViewModel {
     
+    func fetchPeopleList() async {
+        await NetworkManager().fetchPeople(page: "1")
+    }
 }
