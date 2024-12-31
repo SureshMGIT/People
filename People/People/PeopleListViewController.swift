@@ -13,11 +13,25 @@ final class PeopleListViewController: UIViewController {
     
     let viewModel = PeopleListViewModel()
     
+    let activityIndicatorView: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        return activityIndicator
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         viewModel.delegate = self
+        showLoader()
         fetchList()
+    }
+    
+    func showLoader() {
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.startAnimating()
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        activityIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
     func fetchList() {
@@ -58,6 +72,7 @@ extension PeopleListViewController: UITableViewDataSource {
 extension PeopleListViewController: ViewModelDelegate {
     func peopleListFetched() {
         DispatchQueue.main.async { [weak self] in
+            self?.activityIndicatorView.isHidden = true
             self?.tableView.reloadData()
         }
     }

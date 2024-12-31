@@ -48,6 +48,27 @@ final class NetworkManager {
             return nil
         }
     }
+    
+    func fetchPersonImages(personId: String) async -> Result<Images, NetworkError>{
+
+        let url = URL(string: "https://api.themoviedb.org/3/person/\(personId)/images")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.timeoutInterval = 10
+        request.allHTTPHeaderFields = [
+          "accept": "application/json",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0MzYzOTM0ZGM2ZTUwMmIzMDc0NGM2Zjc1OTJkYTYxMiIsIm5iZiI6MTczNTYyNzA3OC40MzEsInN1YiI6IjY3NzM5MTQ2OThmMmY4MmZjNDkyOTI2MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XqznN4VjxzC9tuQq5VXVn4KWUTYMWlivucvzHCj3G48"
+        ]
+        
+        do {
+            let session = URLSession(configuration: .default, delegate: CustomSessionDelegate(), delegateQueue: nil)
+            let (data, _) = try await session.data(for: request)
+            let imageModel = try JSONDecoder().decode(Images.self, from: data)
+            return .success(imageModel)
+        } catch {
+            return .failure(.networkError)
+        }
+    }
 }
 
 class CustomSessionDelegate: NSObject, URLSessionDelegate {
