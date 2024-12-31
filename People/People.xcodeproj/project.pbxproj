@@ -13,6 +13,7 @@
 		FADAE2CB2D23D5C900FF05E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADAE2C92D23D5C900FF05E1 /* Main.storyboard */; };
 		FADAE2CD2D23D5CB00FF05E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FADAE2CC2D23D5CB00FF05E1 /* Assets.xcassets */; };
 		FADAE2D02D23D5CB00FF05E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADAE2CE2D23D5CB00FF05E1 /* LaunchScreen.storyboard */; };
+		FADAE2D82D23D6E000FF05E1 /* PeopleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAE2D72D23D6E000FF05E1 /* PeopleListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FADAE2CC2D23D5CB00FF05E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FADAE2CF2D23D5CB00FF05E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FADAE2D12D23D5CB00FF05E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FADAE2D72D23D6E000FF05E1 /* PeopleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				FADAE2C32D23D5C900FF05E1 /* AppDelegate.swift */,
 				FADAE2C52D23D5C900FF05E1 /* SceneDelegate.swift */,
 				FADAE2C72D23D5C900FF05E1 /* PeopleListViewController.swift */,
+				FADAE2D72D23D6E000FF05E1 /* PeopleListViewModel.swift */,
 				FADAE2C92D23D5C900FF05E1 /* Main.storyboard */,
 				FADAE2CC2D23D5CB00FF05E1 /* Assets.xcassets */,
 				FADAE2CE2D23D5CB00FF05E1 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FADAE2C82D23D5C900FF05E1 /* PeopleListViewController.swift in Sources */,
+				FADAE2D82D23D6E000FF05E1 /* PeopleListViewModel.swift in Sources */,
 				FADAE2C42D23D5C900FF05E1 /* AppDelegate.swift in Sources */,
 				FADAE2C62D23D5C900FF05E1 /* SceneDelegate.swift in Sources */,
 			);

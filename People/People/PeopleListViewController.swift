@@ -9,6 +9,8 @@ import UIKit
 
 final class PeopleListViewController: UIViewController {
 
+    let viewModel = PeopleListViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
