@@ -18,7 +18,7 @@ final class PeopleListViewModel {
         case .success(let list):
             peopleList += list.list
             delegate?.peopleListFetched()
-        case .failure(let error):
+        case .failure(_):
             delegate?.peopleListFetchedFailed()
         }
     }

@@ -36,6 +36,18 @@ final class NetworkManager {
             return .failure(.networkError)
         }
     }
+    
+    func downloadImage(path: String) async -> Data? {
+        let url = URL(string: "https://image.tmdb.org/t/p/w500\(path)")!
+        let request = URLRequest(url: url)
+        do {
+            let session = URLSession(configuration: .default, delegate: CustomSessionDelegate(), delegateQueue: nil)
+            let (data, _) = try await session.data(for: request)
+            return data
+        } catch {
+            return nil
+        }
+    }
 }
 
 class CustomSessionDelegate: NSObject, URLSessionDelegate {
